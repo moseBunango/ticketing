@@ -47,7 +47,9 @@
            Online Bus System
          </a>
        </div>
-      @include('layouts.sidebar')
+       <div>
+       @include('layouts.sidebar')
+      </div>
      </div>
      <div class="main-panel">
        <!-- Navbar -->

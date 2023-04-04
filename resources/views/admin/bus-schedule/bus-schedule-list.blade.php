@@ -12,48 +12,43 @@
             <span class="pull-center">
             <a href="#" data-toggle="modal" data-target="#exampleModalCenteraddbus" 
             data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">
-            <i class="glyphicon glyphicon-plus"></i> Add New Region</a>
+            <i class="glyphicon glyphicon-plus"></i> Generate new bus schedual</a>
             </span>
             <br>
             <br>
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Region List</h4>
+                  <h4 class="card-title ">Bus Shedual List</h4>
                   <h4 class="card-title pull-right">Today is: {{ date('d-m-Y', time()) }}</h4>
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                  @if ( count($region) > 0 ) 
+                  @if ( count($busschedule) > 0 ) 
                     <table class="table">
                       <thead class=" text-primary">
                       <th>ID</th>
-                    <th>Region Name</th>
-                    <th>Region Code</th>
-                    <th>Status</th>
-                    <th>Created Date</th>
+                    <th>Bus ID</th>
+                    <th>Region</th>
+                    <th>depart Date</th>
+                    <th>depart time</th>
                     <th>Action</th>
                     </thead>
                     <tbody>
-                    @foreach ( $region as $data )
+                    @foreach ( $busschedule as $data )
                       <tr>
-                        <td>{{ $data->region_id }}</td>
-                        <td><a data-toggle="modal" data-target="#exampleModalCenterviewOperator
-                            {{$data->reagion_id}}"data-toggle="tooltip">{{ $data->reagion_name }}</a></td>
-                        <td>{{ $data->reagion_code }}</td>
-                        <td>{{ $data->status }} 
-                             {{-- echo" In Active"
-                            @else
-                            echo" Active" 
-                            @endif --}}
-                        </td>
-                        <td>{{ $data->created_at }}</td>
+                        <td>{{ $data->operator_id }}</td>
+                        <td>{{ $data->bus_id }}</a></td>
+                        <td>{{ $data->reagion_id }}</td>
+                        <td>{{ $data->depart_date }}</td>
+                        <td>{{ $data->depart_time }}</td>
                         <td>
-                          <form action="{{ 'region.destroy' . $data->region_id }}" method="post">
+                          <form action="{{route('bus-schedule.destroy',$data->schedule_id)}}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <input type="submit" name="submit" value="Edit" class="btn btn-sm btn-info" />
                             <input type="submit" name="submit" value="Delete" class="btn btn-sm btn-danger" />
+                            <input type="submit" name="submit" value="Edit" class="btn btn-sm btn-info" />
+                            
                           </form>
                         </td>
                       </tr>
@@ -68,6 +63,6 @@
             </div>
             </div>
             </div>
-            @include('admin.regions.add-region')
-            @include('admin.regions.add-region')
+            @include('admin.bus-schedule.add-bus-schedule')
+            @include('admin.bus-schedule.add-bus-schedule')
 @endsection
