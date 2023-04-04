@@ -15,6 +15,7 @@ class OperatorController extends Controller
     {
         $operators = Operator::get();
         return view('admin.operators.operator-list', compact('operators'));
+        return view('customer', compact('operators'));
     }
 
     /**
