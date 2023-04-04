@@ -29,3 +29,6 @@ Route::get('/out', [App\Http\Controllers\HomeController::class, 'logout'])->name
     Route::Resource('operator', 'App\Http\Controllers\OperatorController');
 Route::Resource('region','App\Http\Controllers\RegionController');
 Route::Resource('sub-region','App\Http\Controllers\Sub_RegionController');
+
+Route::Resource('bus-schedule','App\Http\Controllers\BusScheduleController');
+
