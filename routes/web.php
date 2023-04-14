@@ -17,9 +17,8 @@ use illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome_page');
+    return view('welcome');
 });
-Route::get('/getSchedules', [App\Http\Controllers\ScheduleController::class, ' getSchedules'])->name(' getSchedules');
 
 Auth::routes();
 
