@@ -13,21 +13,53 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.min.css') }}">
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+	<style>
+	.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #0062cc;
+}
+</style>
+
 </head>
 <body class="form-v3" >
+<a href="{{url('out')}}" class="button">Logout</a>
+
 	<div class="page-content">
 		<div class="form-v3-content">
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" action="{{route('getScheduals')}}" method="post" id="myform">
 				<h2>Booking Tickets</h2>
 				
 				<div class="form-group">
 					<div class="form-row form-row-1">
 						<label for="full-name">FROM</label>
-						<input type="text" name=""  class="input-text" required>
+						<select name="speciality" style="color:black;"width="200px" required="">
+                        <option value="">---SELECT---</option>
+                        @foreach ($regions as $data)
+                                    <option value="{{$data->reagion_id}}">{{$data->reagion_name}}</option>
+                                    @endforeach
+						</select>
 					</div>
 					<div class="form-row form-row-1">
 						<label for="your-email">TO</label>
-						<input type="text" name=""  class="input-text" required>
+						<select name="speciality" style="color:black;"width="200px" required="">
+                        <option value="destination">---SELECT---</option>
+                        @foreach ($regions as $data)
+                                    <option value="{{$data->reagion_id}}">{{$data->reagion_name}}</option>
+                                    @endforeach
+						</select>
 					</div>
 				</div>
 				<div class="form-group form-group-1">
