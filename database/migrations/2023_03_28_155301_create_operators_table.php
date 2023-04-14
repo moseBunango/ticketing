@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('operator_name');
             $table->string('operator_email');
             $table->string('operator_phone');
-            $table->string('operator_address');
-            $table->string('operator_logo');
+            $table->string('operator_address');     
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

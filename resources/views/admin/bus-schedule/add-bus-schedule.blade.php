@@ -36,30 +36,30 @@
                                 <select name="region_id" class="form-control">
                                     <option value="">Select Region</option>
                                     @foreach ($region as $data)
-                                    <option value="{{$data->reagion_id}}">{{$data->reagion_name}}</option>
+                                    <option value="{{$data->region_id}}">{{$data->region_name}}</option>
                                     @endforeach
                                 </select>
                               
-                                <select name="sub_region_id" class="form-control">
+                                <select name="to_region" class="form-control">
                                     <option value="">Select sub reagion</option>
-                                    @foreach ($sub_region as $data)
-                                    <option value="{{$data->sub_reagion_id}}">{{$data->sub_reagion_name}}</option>
+                                    @foreach ($region as $data)
+                                    <option value="{{$data->region_name}}">{{$data->region_name}}</option>
                                     @endforeach
                                 </select>
                           </div>
                         </div>
-                      <div class="col-md-6">
+                      <!-- <div class="col-md-6">
                           <div class="form-group">
-                                <!-- <label for="exampleInputEmail1">Bus Name</label> -->
+                                
                                 <input name="depart_date"  class="form-control" aria-describedby="emailHelp"
                                  placeholder="Enter depart date" type="text">
                           </div>
                           <div class="form-group">
-                                <!-- <label for="exampleInputEmail1">Bus Name</label> -->
+                               
                                 <input name="return_date"  class="form-control" aria-describedby="emailHelp"
                                  placeholder="Enter return date" type="text">
                           </div>
-                          </div>
+                          </div> -->
 
                           
                           <div class="col-md-6">

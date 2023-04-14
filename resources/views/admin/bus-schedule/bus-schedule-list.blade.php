@@ -23,27 +23,31 @@
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
                 <div class="card-body">
+                 
                   <div class="table-responsive">
                   @if ( count($busschedule) > 0 ) 
                     <table class="table">
                       <thead class=" text-primary">
-                      <th>ID</th>
-                    <th>Bus ID</th>
-                    <th>Region</th>
+                      <th>Operator</th>
+                    <th>Bus</th>
+                    <th>From</th>
+                    <th>To</th>
                     <th>depart Date</th>
                     <th>depart time</th>
                     <th>Action</th>
                     </thead>
                     <tbody>
-                    @foreach ( $busschedule as $data )
+                    @foreach ( $scheduleData as $name )
+                   
                       <tr>
-                        <td>{{ $data->operator_id }}</td>
-                        <td>{{ $data->bus_id }}</a></td>
-                        <td>{{ $data->reagion_id }}</td>
-                        <td>{{ $data->depart_date }}</td>
-                        <td>{{ $data->depart_time }}</td>
+                        <td>{{$name->operator_name}}</td>
+                        <td>{{$name->bus_name}}</a></td>
+                        <td>{{$name->region_name}}</td>
+                        <td>{{$name->to_region}}</td>
+                        <td>everyday</td>
+                        <td>{{$name->depart_time}}</td>
                         <td>
-                          <form action="{{route('bus-schedule.destroy',$data->schedule_id)}}" method="post">
+                          <form action="" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <input type="submit" name="submit" value="Delete" class="btn btn-sm btn-danger" />
@@ -52,6 +56,7 @@
                           </form>
                         </td>
                       </tr>
+                    
                     @endforeach
                 </tbody>
               </table>
@@ -63,6 +68,6 @@
             </div>
             </div>
             </div>
-            @include('admin.bus-schedule.add-bus-schedule')
-            @include('admin.bus-schedule.add-bus-schedule')
+            <!-- @include('admin.bus-schedule.add-bus-schedule')
+            @include('admin.bus-schedule.add-bus-schedule') -->
 @endsection
