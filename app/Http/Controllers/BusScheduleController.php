@@ -24,8 +24,17 @@ class BusScheduleController extends Controller
     $operators = Operator::get();
     $region = Region::get();
     $sub_region = Sub_Region::get();
+
+    $scheduleData = DB::table('operators')
+    ->join('bus_schedules', 'operators.operator_id', '=', 'bus_schedules.operator_id')
+    ->join('buses', 'buses.bus_id', '=', 'bus_schedules.bus_id')
+    ->join('regions', 'regions.region_id', '=', 'bus_schedules.region_id')
+    ->select('operators.operator_name', 'buses.bus_name', 'regions.region_name',
+     'bus_schedules.depart_time', 'bus_schedules.to_region')
+    ->get();
+    // return view('admin.bus-schedule.bus-schedule-list', ['operatorName' => $operatorName]);
     return view('admin.bus-schedule.bus-schedule-list',compact('busschedule','buses',
-    'operators','region','sub_region'));
+    'operators','region','sub_region', 'scheduleData'));
     }
 
     /**
@@ -44,21 +53,20 @@ class BusScheduleController extends Controller
         $this->bus_schedule_validation($request);
         $operator_id = $request->get('operator_id');
         $bus_id = $request->get('bus_id');
-        $region_id = $request->get('sub_region_id');
-        $sub_region_id = $request->get('sub_region_id');
-        $depart_date = $request->get('depart_date');
-        $return_date = $request->get('return_date');
+        $region_id = $request->get('region_id');
+        $to_region = $request->get('to_region');
+        // $depart_date = $request->get('depart_date');
+        // $return_date = $request->get('return_date');
         $depart_time = $request->get('depart_time');
         // $status = $request->get('status');
             
         $insertBusSchedules = [
             'bus_id' => $bus_id,
             'operator_id' => $operator_id,
-            'reagion_id' => $region_id,
-            'sub_reagion_id' => $sub_region_id,
+            'region_id' => $region_id,
+            'to_region' => $to_region,
             'depart_time' => $depart_time,
-            'depart_date' => $depart_date,
-            'return_date' => $return_date,
+          
             // 'status' => $status,
             'created_at' => \Carbon\carbon::now(),
             'updated_at' => \Carbon\carbon::now(),
@@ -66,16 +74,21 @@ class BusScheduleController extends Controller
         // dd($insertBus); // we will check okay if we are having all the data okay
         DB::table('bus_schedules')->insert(  $insertBusSchedules);
         Session::flash('msg', 'Bus Schedule Successfully!');
-        return redirect()->back();
 
-        return view('admin.bus-schedule.bus-schedule-list');
+       
+
+        return redirect()->back();
+        
+       
+       
+        return view('admin.bus-schedule.bus-schedule-list', ['operatorName' => $operatorName]);
     }
     public function bus_schedule_validation(){
         $rules = [  // this array okay to validate our buses input before insertation to our database
             'bus_id' => 'required',
-            'reagion_id' => 'required',
-            'sub_reagion_id' => 'required',
-            'opeartor_id' => 'required',
+            'region_id' => 'required',
+            'to_region' => 'required',
+            'operator_id' => 'required',
         ];}
 
     /**
@@ -109,6 +122,6 @@ class BusScheduleController extends Controller
     {
         //
         $schedule->delete();
-        return redirect()->route('bus-schedule.index')->with('succes','items deleted succesfully');
+        return redirect()->route('bus-schedule.index')->with('success','items deleted succesfully');
     }
 }

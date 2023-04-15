@@ -15,19 +15,20 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 </head>
 <body class="form-v3" >
+<a class="dropdown-item" href="{{url('out')}}">Log out</a> 
 	<div class="page-content">
 		<div class="form-v3-content">
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" action="{{url('journey')}}" method="get" id="myform">
 				<h2>Booking Tickets</h2>
 				
 				<div class="form-group">
 					<div class="form-row form-row-1">
 						<label for="full-name">FROM</label>
-						<input type="text" name=""  class="input-text" required>
+						<input type="text" name="from"  class="input-text" required>
 					</div>
 					<div class="form-row form-row-1">
 						<label for="your-email">TO</label>
-						<input type="text" name=""  class="input-text" required>
+						<input type="text" name="to"  class="input-text" required>
 					</div>
 				</div>
 				<div class="form-group form-group-1">

@@ -49,17 +49,17 @@
                                 placeholder="Enter Operator Description" type="text"></textarea>
                           </div> --}}
                           <div class="col-md-3">
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                                 <input name="status"  aria-describedby="emailHelp" type="checkbox">
                                 <label for="exampleInputEmail1">Active</label>
-                          </div>
+                          </div> -->
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-md-12">
                         <label class="control-label">Image</label>
                         <input type="file" name="operator_logo">
                 </div>
-            </div>
+            </div> -->
                       </fieldset>
         </div>
         <div class="modal-footer">
