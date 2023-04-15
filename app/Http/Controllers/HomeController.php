@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\Region;
 
 class HomeController extends Controller
 {
@@ -31,8 +30,7 @@ class HomeController extends Controller
     public function redirect(){
         if(Auth::id()){
             if(Auth::user()->role=='0'){
-                $regions = Region::get();
-                return view('customer.customer',compact('regions'));
+                return view('customer');
             }
             else{
                 return view('admin.admin-dashboard');

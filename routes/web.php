@@ -16,10 +16,9 @@ use illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome_page');
-});
-Route::get('/getSchedules', [App\Http\Controllers\ScheduleController::class, ' getSchedules'])->name(' getSchedules');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -33,4 +32,10 @@ Route::Resource('sub-region','App\Http\Controllers\Sub_RegionController');
 
 Route::Resource('bus-schedule','App\Http\Controllers\BusScheduleController');
 //Route::Resource('bus-schedule','App\Http\Controllers\BusScheduleController');
+
+Route::get('/journey', [App\Http\Controllers\journeyController::class, 'index']);
+Route::get('/seat-selection', [App\Http\Controllers\journeyController::class, 'seat']);
+Route::get('/seatTest', function(){
+    return view('seatTest');
+});
 

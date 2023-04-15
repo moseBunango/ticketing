@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('operators', function (Blueprint $table) {
-            $table->bigIncrements('operator_id');
-            $table->string('operator_name');
-            $table->string('operator_email');
-            $table->string('operator_phone');
-            $table->string('operator_address');     
+        Schema::create('regions', function (Blueprint $table) {
+            $table->bigIncrements('region_id');
+            $table->string('region_name');
+            $table->string('region_code');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('operators');
+        Schema::dropIfExists('regions');
     }
 };
