@@ -84,7 +84,7 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- banner -->
-      <section class="banner_main">
+     <section class="banner_main">
          <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
             <ol class="carousel-indicators">
                <li data-target="#banner1" data-slide-to="0" class="active"></li>
@@ -98,11 +98,9 @@
                         <div class="row">
                            <div class="col-md-7 col-lg-5">
                               <div class="text-bg">
-                                 <h1> Bus Booking Company</h1>
-                                 <span>Sign up to Book your ticket now to your desired destination</span>
+                                 <h1>Bus Booking Company</h1>
+                                 <span>Sing up to book your travell to your desired destination</span>
                                  <a class="read_more" href="#">REGISTER NOW</a>
-                                 <div class="button">
-                                 
                                  @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                     @auth
@@ -116,7 +114,6 @@
                     @endauth
                 </div>
             @endif
-
                               </div>
                            </div>
                            <div class="col-md-12 col-lg-7">
@@ -125,9 +122,6 @@
                                     <div class="ban_track">
                                        <figure><img src="welcome/images/bus-tour.png" alt="#"/></figure>
                                     </div>
-                                 </div>
-                                 <div class="col-md-6">
-                                    
                                  </div>
                               </div>
                            </div>
