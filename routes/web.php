@@ -32,9 +32,3 @@ Route::Resource('sub-region','App\Http\Controllers\Sub_RegionController');
 
 Route::Resource('bus-schedule','App\Http\Controllers\BusScheduleController');
 
-Route::get('/journey', [App\Http\Controllers\journeyController::class, 'index']);
-Route::get('/seat-selection', [App\Http\Controllers\journeyController::class, 'seat']);
-Route::get('/seatTest', function(){
-    return view('seatTest');
-});
-

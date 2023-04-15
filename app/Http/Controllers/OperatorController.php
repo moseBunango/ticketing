@@ -42,20 +42,20 @@ class OperatorController extends Controller
              'operator_email' => 'required',
              'operator_address' => 'required',
              'operator_phone' => 'required',
-            //  'operator_logo' => 'image|max:2048',
+             'operator_logo' => 'image|max:2048',
         ]);
 
-            // $image =  $request->file('operator_logo');
+            $image =  $request->file('operator_logo');
 
-            // $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            // $image->move(public_path('operator_images'), $image_name);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('operator_images'), $image_name);
 
             $operators = new Operator;
             $operators->operator_name = $request->operator_name;
             $operators->operator_email = $request->operator_email;
             $operators->operator_address = $request->operator_address;
             $operators->operator_phone = $request->operator_phone;
-            // $operators->operator_logo = $image_name;
+            $operators->operator_logo = $image_name;
 
                 // dd($operators);
             $operators->save(); // THIS SAVE FUNCTION WILL SAVE THE DATA OKAY

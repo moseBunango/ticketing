@@ -39,8 +39,8 @@
                       <tr>
                         <td>{{ $data->region_id }}</td>
                         <td><a data-toggle="modal" data-target="#exampleModalCenterviewOperator
-                            {{$data->reagion_id}}"data-toggle="tooltip">{{ $data->region_name }}</a></td>
-                        <td>{{ $data->region_code }}</td>
+                            {{$data->reagion_id}}"data-toggle="tooltip">{{ $data->reagion_name }}</a></td>
+                        <td>{{ $data->reagion_code }}</td>
                         <td>{{ $data->status }} 
                              {{-- echo" In Active"
                             @else

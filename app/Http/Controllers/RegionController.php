@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Region;
 use DB;
-use Session;
 
 class RegionController extends Controller
 {

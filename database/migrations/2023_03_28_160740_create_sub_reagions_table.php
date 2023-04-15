@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('regions', function (Blueprint $table) {
-            $table->bigIncrements('region_id');
-            $table->string('region_name');
-            $table->string('region_code');
+        Schema::create('sub_reagions', function (Blueprint $table) {
+            $table->bigIncrements('sub_reagion_id');
+            $table->string('sub_reagion_name');
+            $table->string('sub_reagion_code');
+            $table->integer('reagion_id');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regions');
+        Schema::dropIfExists('sub_reagions');
     }
 };
