@@ -32,5 +32,5 @@ Route::Resource('region','App\Http\Controllers\RegionController');
 Route::Resource('sub-region','App\Http\Controllers\Sub_RegionController');
 
 Route::Resource('bus-schedule','App\Http\Controllers\BusScheduleController');
-//Route::Resource('bus-schedule','App\Http\Controllers\BusScheduleController');
+
 
