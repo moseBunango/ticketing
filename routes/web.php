@@ -16,9 +16,9 @@ use illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome_page');
+});
 
 Auth::routes();
 
