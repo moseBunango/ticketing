@@ -86,11 +86,7 @@
       <!-- banner -->
      <section class="banner_main">
          <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#banner1" data-slide-to="0" class="active"></li>
-               <li data-target="#banner1" data-slide-to="1"></li>
-               <li data-target="#banner1" data-slide-to="2"></li>
-            </ol>
+           
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <div class="container-fluid">
@@ -100,9 +96,9 @@
                               <div class="text-bg">
                                  <h1>Bus Booking Company</h1>
                                  <span>Sing up to book your travell to your desired destination</span>
-                                 <a class="read_more" href="#">REGISTER NOW</a>
+                                
                                  @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                <div class="sm:fixed sm:top-0 sm:right-0 text-right">
                     @auth
                         <a href="{{ url('/home') }}"  class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
                     @else
@@ -131,12 +127,7 @@
                </div>
               
                                 
-            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </a>
-            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
+           
          </div>
       </section>
       <!-- end banner -->
