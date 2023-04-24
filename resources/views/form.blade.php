@@ -60,74 +60,7 @@
         </div>
     </nav>
     <!-- Navbar End -->
-     <!-- Contact Start -->
-     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Register to use our service</h6>
-                
-            </div>
-            <div class="container" style="text-align: center;">
-             
-                <div class="col-lg-4 wow fadeInUp container" data-wow-delay="0.5s">
-                    <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                        <div class="row g-3">
-                        <div class="col-12">
-                                <div class="form-floating">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Your Name">
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                 @enderror
-                                    <label for="email">Your Name</label>
-                                   
-                                </div>
-                            </div>
-                          
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" id="email" placeholder="Your Email">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                 @enderror
-                                    <label for="email">Your Email</label>
-                                   
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" id="subject" placeholder="password">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                    <label for="password">Password</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="confirm password">
-                                  
-                                    <label for="password">Confirm password</label>
-                                </div>
-                            </div>
-                          
-                            <div class="col-6">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
-                            </div>
-                           
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+     
  
    
         

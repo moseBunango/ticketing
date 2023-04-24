@@ -29,6 +29,16 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('newcss/style.css')}}" rel="stylesheet">
+    <!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{{ asset('bookcss/bootstrap.min.css') }}" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ asset('bookcss/style.css') }}" />
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
 
 <body>
@@ -64,69 +74,118 @@
      <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Register to use our service</h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">Login to use our service</h6>
                 
             </div>
-            <div class="container" style="text-align: center;">
-             
-                <div class="col-lg-4 wow fadeInUp container" data-wow-delay="0.5s">
-                    <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                        <div class="row g-3">
-                        <div class="col-12">
-                                <div class="form-floating">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Your Name">
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                 @enderror
-                                    <label for="email">Your Name</label>
-                                   
-                                </div>
-                            </div>
-                          
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" id="email" placeholder="Your Email">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                 @enderror
-                                    <label for="email">Your Email</label>
-                                   
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" id="subject" placeholder="password">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                    <label for="password">Password</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="confirm password">
-                                  
-                                    <label for="password">Confirm password</label>
-                                </div>
-                            </div>
-                          
-                            <div class="col-6">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
-                            </div>
-                           
-                        </div>
-                    </form>
-                </div>
-            </div>
+              
         </div>
+
     </div>
+    <!-- <div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="form-header">
+							<h1>Book a car</h1>
+						</div>
+						<form>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" type="text" placeholder="Enter your name">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Email</span>
+										<input class="form-control" type="email" placeholder="Enter your email">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Phone</span>
+								<input class="form-control" type="tel" placeholder="Enter your phone number">
+							</div>
+							<div class="form-group">
+								<span class="form-label">Pickup Location</span>
+								<input class="form-control" type="text" placeholder="Enter ZIP/Location">
+							</div>
+							<div class="form-group">
+								<span class="form-label">Destination</span>
+								<input class="form-control" type="text" placeholder="Enter ZIP/Location">
+							</div>
+							<div class="row">
+								<div class="col-sm-5">
+									<div class="form-group">
+										<span class="form-label">Pickup Date</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-sm-7">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">Hour</span>
+												<select class="form-control">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+													<option>7</option>
+													<option>8</option>
+													<option>9</option>
+													<option>10</option>
+													<option>11</option>
+													<option>12</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">Min</span>
+												<select class="form-control">
+													<option>05</option>
+													<option>10</option>
+													<option>15</option>
+													<option>20</option>
+													<option>25</option>
+													<option>30</option>
+													<option>35</option>
+													<option>40</option>
+													<option>45</option>
+													<option>50</option>
+													<option>55</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">AM/PM</span>
+												<select class="form-control">
+													<option>AM</option>
+													<option>PM</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<button class="submit-btn">Book Now</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
     <!-- Contact End -->
  
    

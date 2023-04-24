@@ -16,9 +16,9 @@ use illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome_page');
-});
+// Route::get('/', function () {
+//     return view('welcome_page');
+// });
 
 Auth::routes();
 
@@ -39,3 +39,15 @@ Route::get('/seatTest', function(){
     return view('seatTest');
 });
 
+
+Route::get('/', function () {
+    return view('new');
+});
+
+Route::get('/oza', function () {
+    return view('newlogin');
+});
+
+// Route::get('/helo', function () {
+//     return view('form');
+// });
