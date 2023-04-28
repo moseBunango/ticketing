@@ -120,5 +120,7 @@ class Sub_RegionController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('sub_regions')->where('sub_region_id', $id)->delete();
+        return redirect()->route('sub-region.index')->with('success','items deleted succesfully');
     }
 }

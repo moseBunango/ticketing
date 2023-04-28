@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Operator;
+use DB;
 class OperatorController extends Controller
 {
     /**
@@ -111,5 +112,7 @@ class OperatorController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('operators')->where('operator_id', $id)->delete();
+        return redirect()->route('operator.index')->with('success','items deleted succesfully');
     }
 }

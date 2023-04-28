@@ -21,7 +21,7 @@
                         <div class="col-md-6">
                         <div class="form-group">
                                 <!-- <label for="exampleInputPassword1">Seat No</label> -->
-                                <select name="operator_id" class="form-control">
+                                <select name="operator_id" class="form-control" required="">
                                     <option value="">Select Operator</option>
                                     @foreach ($operators as $data)
                                     <option value="{{$data->operator_id}}">{{$data->operator_name}}</option>
@@ -33,27 +33,27 @@
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="bus_name"  class="form-control" aria-describedby="emailHelp"
-                                 placeholder="Enter Bus Name" type="text">
+                                 placeholder="Enter Bus Name" type="text" required="">
                           </div>
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="bus_code"  class="form-control" aria-describedby="emailHelp" 
-                                placeholder="Enter Bus Code" type="text">
+                                placeholder="Enter Bus Code" type="text" required="">
                           </div>
                           </div>
                           </div>
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="total_seats"  class="form-control" aria-describedby="emailHelp"
-                                 placeholder="Enter Total Seat" type="text">
+                                 placeholder="Enter Total Seat" type="text" required="">
                           </div>
                           
                           {{-- <div class="form-group">
                                 <!-- <label for="exampleInputPassword1">Seat No</label> -->
                                 <textarea name="operator_description" rows="2" cols="20" class="form-control" 
-                                placeholder="Enter Operator Description" type="text"></textarea>
+                                placeholder="Enter Operator Description" type="text" required=""></textarea>
                           </div> --}}
                           <div class="col-md-3">
                           <div class="form-group">

@@ -21,7 +21,7 @@
                         <div class="col-md-6">
                         <div class="form-group">
                                 <!-- <label for="exampleInputPassword1">Seat No</label> -->
-                                <select name="region_id" class="form-control">
+                                <select name="region_id" class="form-control" required="">
                                     <option value="">Select Region</option>
                                     @foreach ($region as $data)
                                     <option value="{{$data->region_id}}">{{$data->region_name}}</option>
@@ -33,14 +33,14 @@
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="sub_region_name"  class="form-control" aria-describedby="emailHelp"
-                                 placeholder="Enter Sub Region Name" type="text">
+                                 placeholder="Enter Sub Region Name" type="text" required="">
                           </div>
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="sub_region_code"  class="form-control" aria-describedby="emailHelp" 
-                                placeholder="Enter Sub Region Code" type="text">
+                                placeholder="Enter Sub Region Code" type="text" required="">
                           </div>
                           </div>
                           </div>

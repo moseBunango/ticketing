@@ -27,30 +27,29 @@
                   @if ( count($sub_region) > 0 ) 
                     <table class="table">
                       <thead class=" text-primary">
+                      <th>Action</th>
                       <th>ID</th>
                     <th>Region Name</th>
                     <th>Sub Region Name</th>
                     <th>Sub Region Code</th>
                     <th>Created Date</th>
-                    <th>Action</th>
                     </thead>
                     <tbody>
                     @foreach ( $sub_region as $key => $data )
                       <tr>
+                      <td>
+                        <form method="post" action="{{route('sub-region.destroy',$data->sub_region_id)}}">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                        </td>
                         <td>{{ ++$key }}</td>
                         <td>{{ $data->reagion_id }}</td>
                         <td><a data-toggle="modal" data-target="#exampleModalCenterviewOperator
                             {{$data->sub_reagion_id}}"data-toggle="tooltip">{{ $data->sub_reagion_name }}</a></td>
                         <td>{{ $data->sub_reagion_code }}</td>
                         <td>{{ $data->created_at }}</td>
-                        <td>
-                          <form action="{{ 'sub-region.destroy' . $data->sub_region_id }}" method="post">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                            <input type="submit" name="submit" value="Edit" class="btn btn-sm btn-info" />
-                            <input type="submit" name="submit" value="Delete" class="btn btn-sm btn-danger" />
-                          </form>
-                        </td>
                       </tr>
                     @endforeach
                 </tbody>

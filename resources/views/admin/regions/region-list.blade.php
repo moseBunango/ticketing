@@ -27,16 +27,23 @@
                   @if ( count($region) > 0 ) 
                     <table class="table">
                       <thead class=" text-primary">
+                      <th>Action</th>
                       <th>ID</th>
                     <th>Region Name</th>
                     <th>Region Code</th>
                     <th>Status</th>
                     <th>Created Date</th>
-                    <th>Action</th>
                     </thead>
                     <tbody>
                     @foreach ( $region as $data )
                       <tr>
+                      <td>
+                        <form method="post" action="{{route('region.destroy',$data->region_id)}}">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                        </td>
                         <td>{{ $data->region_id }}</td>
                         <td><a data-toggle="modal" data-target="#exampleModalCenterviewOperator
                             {{$data->reagion_id}}"data-toggle="tooltip">{{ $data->region_name }}</a></td>
@@ -48,14 +55,6 @@
                             @endif --}}
                         </td>
                         <td>{{ $data->created_at }}</td>
-                        <td>
-                          <form action="{{ 'region.destroy' . $data->region_id }}" method="post">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                            <input type="submit" name="submit" value="Edit" class="btn btn-sm btn-info" />
-                            <input type="submit" name="submit" value="Delete" class="btn btn-sm btn-danger" />
-                          </form>
-                        </td>
                       </tr>
                     @endforeach
                 </tbody>

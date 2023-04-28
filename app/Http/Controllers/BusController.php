@@ -117,5 +117,8 @@ class BusController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('buses')->where('bus_id', $id)->delete();
+
+        return redirect()->route('bus.index')->with('success','items deleted succesfully');
     }
 }

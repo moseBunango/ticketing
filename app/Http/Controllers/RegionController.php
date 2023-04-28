@@ -111,5 +111,7 @@ class RegionController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('regions')->where('region_id', $id)->delete();
+        return redirect()->route('region.index')->with('success','items deleted succesfully');
     }
 }

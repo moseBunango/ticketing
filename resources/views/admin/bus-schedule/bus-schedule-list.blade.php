@@ -47,13 +47,7 @@
                         <td>everyday</td>
                         <td>{{$name->depart_time}}</td>
                         <td>
-                          <form action="" method="post">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                            <input type="submit" name="submit" value="Delete" class="btn btn-sm btn-danger" />
-                            <input type="submit" name="submit" value="Edit" class="btn btn-sm btn-info" />
-                            
-                          </form>
+                      
                         </td>
                       </tr>
                     

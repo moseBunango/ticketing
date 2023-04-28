@@ -118,10 +118,10 @@ class BusScheduleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BusSchedule $schedule)
+    public function destroy($id)
     {
         //
-        $schedule->delete();
+        DB::table('bus_schedules')->where('schedule_id', $id)->delete();
         return redirect()->route('bus-schedule.index')->with('success','items deleted succesfully');
     }
 }

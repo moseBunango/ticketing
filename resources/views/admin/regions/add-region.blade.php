@@ -22,21 +22,21 @@
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="region_name"  class="form-control" aria-describedby="emailHelp"
-                                 placeholder="Enter Region Name" type="text">
+                                 placeholder="Enter Region Name" type="text" required="">
                           </div>
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="region_code"  class="form-control" aria-describedby="emailHelp" 
-                                placeholder="Enter Region Code" type="text">
+                                placeholder="Enter Region Code" type="text" required="">
                           </div>
                           </div>
                           </div>
                           <div class="col-md-3">
                           <div class="form-group">
                                 <input name="status"  aria-describedby="emailHelp" type="checkbox">
-                                <label for="exampleInputEmail1">Active</label>
+                                <label for="exampleInputEmail1" >Active</label>
                           </div>
               </div>
            </fieldset>

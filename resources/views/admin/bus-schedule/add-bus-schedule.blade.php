@@ -21,27 +21,27 @@
                         <div class="col-md-6">
                         <div class="form-group">
                                 <!-- <label for="exampleInputPassword1">Seat No</label> -->
-                                <select name="operator_id" class="form-control">
+                                <select name="operator_id" class="form-control" required="">
                                     <option value="">Select Operator</option>
                                     @foreach ($operators as $data)
-                                    <option value="{{$data->operator_id}}">{{$data->operator_name}}</option>
+                                    <option value="{{$data->operator_id}}" >{{$data->operator_name}}</option>
                                     @endforeach
                                 </select>
-                                <select name="bus_id" class="form-control">
+                                <select name="bus_id" class="form-control" required="">
                                     <option value="">Select related bus</option>
                                     @foreach ($buses as $data)
                                     <option value="{{$data->bus_id}}">{{$data->bus_name}}</option>
                                     @endforeach
                                 </select>
-                                <select name="region_id" class="form-control">
-                                    <option value="">Select Region</option>
+                                <select name="region_id" class="form-control" required="">
+                                    <option value="">Select from region</option>
                                     @foreach ($region as $data)
                                     <option value="{{$data->region_id}}">{{$data->region_name}}</option>
                                     @endforeach
                                 </select>
                               
-                                <select name="to_region" class="form-control">
-                                    <option value="">Select sub reagion</option>
+                                <select name="to_region" class="form-control" required="">
+                                    <option value="">Select to reagion</option>
                                     @foreach ($region as $data)
                                     <option value="{{$data->region_name}}">{{$data->region_name}}</option>
                                     @endforeach
@@ -66,7 +66,7 @@
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="depart_time"  class="form-control" aria-describedby="emailHelp" 
-                                placeholder="Enter depart time" type="text">
+                                placeholder="Enter depart time" type="text" required="">
                           </div>
                           </div>
                           </div>

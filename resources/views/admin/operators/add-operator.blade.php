@@ -22,31 +22,31 @@
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="operator_name"  class="form-control" aria-describedby="emailHelp"
-                                 placeholder="Enter Operator Name" type="text">
+                                 placeholder="Enter Operator Name" type="text" required="">
                           </div>
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="operator_email"  class="form-control" aria-describedby="emailHelp" 
-                                placeholder="Enter Email" type="email">
+                                placeholder="Enter Email" type="email" required="">
                           </div>
                           </div>
                           </div>
                           <div class="form-group">
                                 <!-- <label for="exampleInputEmail1">Bus Name</label> -->
                                 <input name="operator_phone"  class="form-control" aria-describedby="emailHelp"
-                                 placeholder="Enter Mobile Number" type="text">
+                                 placeholder="Enter Mobile Number" type="text" required="">
                           </div>
                           <div class="form-group">
                                 <!-- <label for="exampleInputPassword1">Seat No</label> -->
                                 <textarea name="operator_address" rows="2" cols="20" class="form-control" 
-                                placeholder="Enter Operator Address" type="text"></textarea>
+                                placeholder="Enter Operator Address" type="text" required=""></textarea>
                           </div>
                           {{-- <div class="form-group">
                                 <!-- <label for="exampleInputPassword1">Seat No</label> -->
                                 <textarea name="operator_description" rows="2" cols="20" class="form-control" 
-                                placeholder="Enter Operator Description" type="text"></textarea>
+                                placeholder="Enter Operator Description" type="text" required=""></textarea>
                           </div> --}}
                           <div class="col-md-3">
                           <!-- <div class="form-group">
